@@ -6,7 +6,7 @@
 #     - [系统性能信息模块psutil](https://www.jianshu.com/p/50de2235a35d)
 #     - [几种Python执行时间的计算方法](https://blog.csdn.net/wangshuang1631/article/details/54286551)
 
-import time
+# import time
 
 
 def _debug(msg):
@@ -91,7 +91,7 @@ class CpuUsage:
             return {}
 
         _debug('self.latest_cpu_stat[%d]: %s' % (cpu_num, str(self.latest_cpu_stat[cpu_num])))
-        time_intvl = self.latest_calc_time - self.last_calc_time
+        # time_intvl = self.latest_calc_time - self.last_calc_time
         this_stat = self.latest_cpu_stat[cpu_num]
         last_stat = self.last_cpu_stat[cpu_num]
 
