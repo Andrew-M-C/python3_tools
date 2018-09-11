@@ -7,6 +7,7 @@ import traceback
 # import time
 import datetime
 # import os
+import sys
 import file
 import atexit
 
@@ -221,12 +222,14 @@ def log(log_level, msg, stack=None):
     # 输出到 console
     if log_level <= console_level:
         print(final_msg)
+        sys.stdout.flush()
 
     # 输出到文件
     if log_level <= file_level:
         _open_enable_log_file_if_needed()
         _log_file.write(final_msg)
         _log_file.write('\n')
+        _log_file.flush()
 
     # 返回
     return ret
