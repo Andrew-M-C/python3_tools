@@ -8,6 +8,12 @@
 
 # import time
 
+import sys
+
+if __name__ == '__main__':
+    print('%s is not executable' % sys.argv[0])
+    sys.exit(1)
+
 
 def _debug(msg):
     # print('[opsys] %s' % msg)

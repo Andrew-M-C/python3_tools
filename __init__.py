@@ -13,3 +13,5 @@ import file
 import opsys
 import lang
 import unilog
+import network
+import char

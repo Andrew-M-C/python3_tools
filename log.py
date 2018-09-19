@@ -11,6 +11,10 @@ import sys
 import file
 import atexit
 
+if __name__ == '__main__':
+    print('%s is not executable' % sys.argv[0])
+    sys.exit(1)
+
 _enable_log_func = True
 _enable_log_line = True
 _enable_log_file = True
@@ -31,7 +35,7 @@ LOG_DEBUG = 7       # 7: debug-level message
 
 
 console_level = LOG_DEBUG   # 输出到对话的日志级别
-file_level = LOG_INFO       # 写入文件的日志级别
+file_level = LOG_EMERG       # 写入文件的日志级别
 should_adjust = False       # 是否应该对齐
 
 
@@ -129,7 +133,7 @@ def _pack_msg(level, stack, message):
     '打包组装最终的字符串'
     global _file_part_len_max
     log_parts = []
-
+    # print('stack info: %s / %s' % (type(stack), str(stack)))
     # 添加时间信息
     # part = '[%s]' % time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
     part = '[%s]' % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')

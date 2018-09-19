@@ -9,6 +9,11 @@ import log
 import atexit
 import socket
 import json
+import sys
+
+if __name__ == '__main__':
+    print('%s is not executable' % sys.argv[0])
+    sys.exit(1)
 
 
 LOG_EMERG = 0       # 0: system is unusable
